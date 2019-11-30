@@ -1,0 +1,392 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Usage · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Chapter3/" />
+    
+    
+    <link rel="prev" href="../Chapter1/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    build
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Dst client tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Usage</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="usage">Usage</h1>
+<h3 id="client-tool">Client tool</h3>
+<h4 id="1-string-concept">1. String concept</h4>
+<pre><code class="lang-bash">dst-cli &gt; put <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v1&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; str.put <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v1&quot;</span>   <span class="hljs-comment"># the same as `put`</span>
+dst-cli &gt; ok
+
+dst-cli &gt; get <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; <span class="hljs-string">&quot;v1&quot;</span>
+
+dst-cli &gt; str.get <span class="hljs-string">&quot;k1&quot;</span>       <span class="hljs-comment"># the same as `get`</span>
+dst-cli &gt; <span class="hljs-string">&quot;v1&quot;</span>
+</code></pre>
+<h4 id="2-list-concept">2. List concept</h4>
+<pre><code class="lang-bash">dst-cli &gt; list.put <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-string">&quot;v3&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; list.get <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; [<span class="hljs-string">&quot;v1&quot;</span>, <span class="hljs-string">&quot;v2&quot;</span>, <span class="hljs-string">&quot;v3&quot;</span>]
+
+dst-cli &gt; list.lput <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v4&quot;</span> <span class="hljs-string">&quot;v5&quot;</span> <span class="hljs-string">&quot;v6&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; list.rput <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v7&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; list.ldel <span class="hljs-string">&quot;k1&quot;</span> 2
+dst-cli &gt; ok
+
+dst-cli &gt; list.rdel <span class="hljs-string">&quot;k1&quot;</span> 2
+dst-cli &gt; ok
+
+dst-cli &gt; list.get <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; [<span class="hljs-string">&quot;v6&quot;</span>, <span class="hljs-string">&quot;v1&quot;</span>, <span class="hljs-string">&quot;v2&quot;</span>]
+</code></pre>
+<h4 id="3-set-concept">3. Set concept</h4>
+<pre><code class="lang-bash">dst-cli &gt; set.put <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-string">&quot;v2&quot;</span> <span class="hljs-string">&quot;v3&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; set.get <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; {<span class="hljs-string">&quot;v1&quot;</span>, <span class="hljs-string">&quot;v2&quot;</span>, <span class="hljs-string">&quot;v3&quot;</span>}
+
+dst-cli &gt; set.del <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v1&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; set.get <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; {<span class="hljs-string">&quot;v2&quot;</span>, <span class="hljs-string">&quot;v3&quot;</span>}
+
+dst-cli &gt; set.exists <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v2&quot;</span>
+dst-cli &gt; <span class="hljs-literal">true</span>
+
+dst-cli &gt; set.exists <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v4&quot;</span>
+dst-cli &gt; <span class="hljs-literal">false</span>
+
+dst-cli &gt; set.drop <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; ok
+</code></pre>
+<h4 id="4-dict-concept">4. Dict concept</h4>
+<pre><code class="lang-bash">dst-cli &gt; dict.put <span class="hljs-string">&quot;dict1&quot;</span> <span class="hljs-string">&quot;k1&quot;</span> <span class="hljs-string">&quot;v1&quot;</span> <span class="hljs-string">&quot;k2&quot;</span> <span class="hljs-string">&quot;v2&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; dict.get <span class="hljs-string">&quot;dict1&quot;</span>
+dst-cli &gt; { <span class="hljs-string">&quot;k1&quot;</span> : <span class="hljs-string">&quot;v1&quot;</span>, <span class="hljs-string">&quot;k2&quot;</span> : <span class="hljs-string">&quot;v2&quot;</span>}
+
+dst-cli &gt; dict.get <span class="hljs-string">&quot;dict1&quot;</span> <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; <span class="hljs-string">&quot;v1&quot;</span>
+
+dst-cli &gt; dict.get <span class="hljs-string">&quot;dict1&quot;</span> <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; <span class="hljs-string">&quot;v1&quot;</span>
+
+dst-cli &gt; dict.del <span class="hljs-string">&quot;dict1&quot;</span> <span class="hljs-string">&quot;k1&quot;</span>
+dst-cli &gt; ok
+
+dst-cli &gt; dict.pop <span class="hljs-string">&quot;dict1&quot;</span> <span class="hljs-string">&quot;k2&quot;</span>
+dst-cli &gt; <span class="hljs-string">&quot;v2&quot;</span>
+
+dst-cli &gt; dict.get <span class="hljs-string">&quot;dict1&quot;</span>
+dst-cli &gt; []
+
+dst-cli &gt; dict.drop <span class="hljs-string">&quot;dict1&quot;</span>
+dst-cli &gt; ok
+</code></pre>
+<h4 id="5-table-concept">5. Table concept</h4>
+<ol>
+<li>Define your data structure in a schema file named <code>mytables.sc</code><pre><code class="lang-shell">table TaskTable {
+[p]task_id: string;
+[i]driver_id: string;
+task_name: string;
+return_num: int;
+arguments: [string];
+}
+</code></pre>
+<pre><code class="lang-shell">table DriverTable {
+[p]driver_id: string;
+driver_name: string;
+actor_num: int;
+};
+</code></pre>
+</li>
+<li>Start an dst server and execute this command to create table:<pre><code class="lang-shell">&gt; dst-cli -p 12344 # connect to dst server
+&gt; create TaskTable, DriverTable from mytables.sc
+</code></pre>
+</li>
+<li>Add data to the table:<pre><code class="lang-shell">&gt; TaskTable.add &quot;00001&quot;, &quot;22222&quot;, &quot;my_task&quot;, 3, [&quot;1&quot;, &quot;2&quot;]
+&lt; ok
+&gt; TaskTable.add &quot;00002&quot;, &quot;99999&quot;, &quot;my_task&quot;, 3, [&quot;1&quot;, &quot;2&quot;]
+&lt; ok
+&gt; TaskTable.add &quot;00003&quot;, &quot;22222&quot;, &quot;my_task&quot;, 3, [&quot;1&quot;, &quot;2&quot;]
+&lt; ok
+&gt; DriverTable.add &quot;22222&quot;, &quot;my_driver&quot;, 10
+&lt; ok
+</code></pre>
+</li>
+<li>Query all tasks by driver id:<pre><code class="lang-shell">&gt; TaskTable.query (*) when driver_id == &quot;22222&quot;
+&lt;
+&lt; task_id      driver_id     task_name      num_return      arguments
+&lt; &quot;00001&quot;      &quot;22222&quot;       &quot;my_task&quot;      3               [&quot;1&quot;, &quot;2&quot;]
+&lt; &quot;00003&quot;      &quot;22222&quot;       &quot;my_task&quot;      3               [&quot;1&quot;, &quot;2&quot;]
+&lt; 2 records
+</code></pre>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Chapter1/" class="navigation navigation-prev " aria-label="Previous page: build">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Chapter3/" class="navigation navigation-next " aria-label="Next page: Dst client tool">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.3","depth":1,"next":{"title":"Dst client tool","level":"1.4","depth":1,"path":"Chapter3/README.md","ref":"Chapter3/README.md","articles":[]},"previous":{"title":"build","level":"1.2","depth":1,"path":"Chapter1/README.md","ref":"Chapter1/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/README.md","mtime":"2019-11-30T06:01:59.390Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-30T06:05:14.124Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
